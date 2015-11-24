@@ -1,3 +1,8 @@
+## 1.0.1 / 2015-11-24
+
+- use original value if value is not supported (happened in safari using animation: steps(4, end) 1s infinite)
+- add some tests
+
 ## 1.0.0 / 2015-10-19
 
 - support jss 3.0

@@ -34,6 +34,20 @@ test('unknown property', function () {
   equal(ss.toString(), 'a {\n  xxx: yyy;\n}')
 })
 
+test('unknown value', function () {
+  var ss = jss.createStyleSheet({
+    a: {display: 'yyy'}
+  }, {named: false})
+  equal(ss.toString(), 'a {\n  display: yyy;\n}')
+})
+
+test('unknown property and value', function () {
+  var ss = jss.createStyleSheet({
+    a: {xxx: 'yyy'}
+  }, {named: false})
+  equal(ss.toString(), 'a {\n  xxx: yyy;\n}')
+})
+
 test('prefixed value', function () {
   var ss = jss.createStyleSheet({
     a: {display: 'flex'}

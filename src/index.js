@@ -15,7 +15,7 @@ export default function jssVendorPrefixer() {
 
     if (rule.type !== 'regular') return
 
-    for (let prop in rule.style) {
+    for (const prop in rule.style) {
       const value = rule.style[prop]
 
       let changeProp = false
@@ -28,7 +28,7 @@ export default function jssVendorPrefixer() {
 
       if (changeProp || changeValue) {
         if (changeProp) delete rule.style[prop]
-        rule.style[supportedProp] = supportedValue
+        rule.style[supportedProp || prop] = supportedValue || value
       }
     }
   }
