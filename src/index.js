@@ -28,7 +28,7 @@ export default function jssVendorPrefixer() {
 
       if (changeProp || changeValue) {
         if (changeProp) delete rule.style[prop]
-        rule.style[supportedProp] = supportedValue
+        rule.style[supportedProp || prop] = supportedValue || value
       }
     }
   }
