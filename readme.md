@@ -46,7 +46,7 @@ console.log(styleSheet.classes)
 
 ## Issues
 
-File a bug against [jsstyles/jss prefixed with \[jss-vendor-prefixer\]](https://github.com/isaacs/github/issues/new?title=[jss-vender-prefixer]%20).
+File a bug against [jsstyles/jss prefixed with \[jss-vendor-prefixer\]](https://github.com/jsstyles/jss-vendor-prefixer/issues/new?title=[jss-vender-prefixer]%20).
 
 ## Run tests
 
