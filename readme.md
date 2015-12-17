@@ -44,6 +44,10 @@ console.log(styleSheet.classes)
 { container: "jss-0-0" }
 ```
 
+## Issues
+
+File a bug against [jsstyles/jss prefixed with \[jss-vendor-prefixer\]](https://github.com/isaacs/github/issues/new?title=[jss-vender-prefixer]%20).
+
 ## Run tests
 
 ```bash
