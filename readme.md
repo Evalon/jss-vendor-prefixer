@@ -7,7 +7,7 @@ current runtime and changes only whats required.
 The best thing is - you don't need to download all of them.
 Also it is very fast, all checks are cached.
 
-[Demo](http://jsstyles.github.io/jss-examples/index.html#plugin-jss-vendor-prefixer) -
+[Demo](http://jsstyles.github.io/examples/index.html#plugin-jss-vendor-prefixer) -
 [JSS](https://github.com/jsstyles/jss)
 
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/jsstyles/jss?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
