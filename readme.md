@@ -29,7 +29,7 @@ let sheet = jss.createStyleSheet({
 ```
 
 ```javascript
-console.log(styleSheet.toString())
+console.log(sheet.toString())
 ```
 ```css
 .jss-0-0 {
@@ -38,7 +38,7 @@ console.log(styleSheet.toString())
 ```
 
 ```javascript
-console.log(styleSheet.classes)
+console.log(sheet.classes)
 ```
 ```javascript
 { container: "jss-0-0" }
