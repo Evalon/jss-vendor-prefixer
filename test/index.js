@@ -1,8 +1,10 @@
 'use strict'
 
+
+
 QUnit.module('Vendor prefixes plugin', {
   setup: function () {
-    jss.use(jssVendorPrefixer())
+    jss.use(jssVendorPrefixer.default())
   },
   teardown: function () {
     jss.plugins.registry = []
@@ -13,7 +15,8 @@ test('prefixed property', function () {
   var ss = jss.createStyleSheet({
     a: {animation: 'yyy'}
   }, {named: false})
-  var prefixedProp = cssVendor.prefix.css + 'animation'
+  var prefixedProp = cssVendor.supportedProperty('animation')
+
 
   equal(ss.toString(), 'a {\n  ' + prefixedProp + ': yyy;\n}')
 })
