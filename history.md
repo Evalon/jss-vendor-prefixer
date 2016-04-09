@@ -1,3 +1,7 @@
+## 2.0.0 / 2016-04-16
+
+- update to babel 6
+
 ## 1.0.1 / 2015-11-24
 
 - use original value if value is not supported (happened in safari using animation: steps(4, end) 1s infinite)
