@@ -46,7 +46,7 @@ console.log(sheet.classes)
 
 ## Issues
 
-File a bug against [jsstyles/jss prefixed with \[jss-vendor-prefixer\]](https://github.com/jsstyles/jss/issues/new?title=[jss-vender-prefixer]%20).
+File a bug against [jsstyles/jss prefixed with \[jss-vendor-prefixer\]](https://github.com/jsstyles/jss/issues/new?title=[jss-vendor-prefixer]%20).
 
 ## Run tests
 
