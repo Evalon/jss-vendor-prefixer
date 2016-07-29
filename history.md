@@ -1,3 +1,8 @@
+## 3.0.0 / 2016-05-29
+
+- update to jss@5
+- update other dependencies
+
 ## 2.0.0 / 2016-04-16
 
 - update to babel 6

@@ -1,6 +1,5 @@
 'use strict'
-
-
+var jss = jss.default
 
 QUnit.module('Vendor prefixes plugin', {
   setup: function () {
