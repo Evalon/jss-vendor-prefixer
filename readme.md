@@ -7,6 +7,10 @@ current runtime and changes only whats required.
 The best thing is - you don't need to download all of them.
 Also it is very fast, all checks are cached.
 
+Make sure you read [how to use
+plugins](https://github.com/cssinjs/jss/blob/master/docs/setup.md#setup-with-plugins)
+in general.
+
 [Demo](http://cssinjs.github.io/examples/index.html#plugin-jss-vendor-prefixer) -
 [JSS](https://github.com/cssinjs/jss)
 
