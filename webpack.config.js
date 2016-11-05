@@ -1,17 +1,26 @@
 'use strict'
 
-var webpack = require('webpack')
+const webpack = require('webpack')
 
-var plugins = [
+const env = process.env.NODE_ENV
+const isDev = env === 'development'
+const isTest = env === 'test'
+const isProd = env === 'production'
+
+const plugins = [
   new webpack.DefinePlugin({
-    'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-    __DEV__: process.env.NODE_ENV === 'development',
-    __TEST__: process.env.NODE_ENV === 'test'
+    'process.env.NODE_ENV': JSON.stringify(env),
+    __DEV__: isDev,
+    __TEST__: isTest
   })
 ]
 
-if (process.env.NODE_ENV === 'production') {
-  plugins.push(new webpack.optimize.UglifyJsPlugin())
+if (isProd) {
+  plugins.push(new webpack.optimize.UglifyJsPlugin({
+    compress: {
+      warnings: false
+    }
+  }))
 }
 
 module.exports = {
@@ -19,17 +28,15 @@ module.exports = {
     library: 'jssVendorPrefixer',
     libraryTarget: 'umd'
   },
-  plugins: plugins,
+  plugins,
   module: {
     loaders: [
       {
-        loader: 'babel',
+        loader: 'babel-loader',
         test: /\.js$/,
-        exclude: /node_modules/,
-        query: {
-          presets: ['es2015']
-        }
+        exclude: /node_modules/
       }
     ]
-  }
+  },
+  devtool: 'source-map'
 }
