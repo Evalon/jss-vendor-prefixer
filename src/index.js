@@ -7,7 +7,7 @@ import * as vendor from 'css-vendor'
  * @api public
  */
 export default function jssVendorPrefixer() {
-  return rule => {
+  return (rule) => {
     if (rule.type === 'keyframe') {
       rule.selector = `@${vendor.prefix.css}${rule.selector.substr(1)}`
       return
