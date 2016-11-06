@@ -4,11 +4,15 @@ import cssVendor from 'css-vendor'
 
 import vendorPrefixer from './index'
 
+const settings = {
+  generateClassName: (str, rule) => `${rule.name}-id`
+}
+
 describe('jss-vendor-prefixer', () => {
   let jss
 
   beforeEach(() => {
-    jss = create().use(vendorPrefixer())
+    jss = create(settings).use(vendorPrefixer())
   })
 
   describe('prefixed property', () => {
@@ -17,12 +21,12 @@ describe('jss-vendor-prefixer', () => {
     beforeEach(() => {
       sheet = jss.createStyleSheet({
         a: {animation: 'yyy'}
-      }, {named: false})
+      })
     })
 
     it('should generate correct CSS', () => {
       const prefixedProp = cssVendor.supportedProperty('animation')
-      expect(sheet.toString()).to.be(`a {\n  ${prefixedProp}: yyy;\n}`)
+      expect(sheet.toString()).to.be(`.a-id {\n  ${prefixedProp}: yyy;\n}`)
     })
   })
 
@@ -32,7 +36,7 @@ describe('jss-vendor-prefixer', () => {
     beforeEach(() => {
       sheet = jss.createStyleSheet({
         '@keyframes a': {}
-      }, {named: false})
+      })
     })
 
     it('should generate correct CSS', () => {
@@ -47,11 +51,11 @@ describe('jss-vendor-prefixer', () => {
     beforeEach(() => {
       sheet = jss.createStyleSheet({
         a: {xxx: 'block'}
-      }, {named: false})
+      })
     })
 
     it('should generate correct CSS', () => {
-      expect(sheet.toString()).to.be('a {\n  xxx: block;\n}')
+      expect(sheet.toString()).to.be('.a-id {\n  xxx: block;\n}')
     })
   })
 
@@ -61,11 +65,11 @@ describe('jss-vendor-prefixer', () => {
     beforeEach(() => {
       sheet = jss.createStyleSheet({
         a: {display: 'yyy'}
-      }, {named: false})
+      })
     })
 
     it('should generate correct CSS', () => {
-      expect(sheet.toString()).to.be('a {\n  display: yyy;\n}')
+      expect(sheet.toString()).to.be('.a-id {\n  display: yyy;\n}')
     })
   })
 
@@ -75,11 +79,11 @@ describe('jss-vendor-prefixer', () => {
     beforeEach(() => {
       sheet = jss.createStyleSheet({
         a: {xxx: 'yyy'}
-      }, {named: false})
+      })
     })
 
     it('should generate correct CSS', () => {
-      expect(sheet.toString()).to.be('a {\n  xxx: yyy;\n}')
+      expect(sheet.toString()).to.be('.a-id {\n  xxx: yyy;\n}')
     })
   })
 
@@ -89,12 +93,12 @@ describe('jss-vendor-prefixer', () => {
     beforeEach(() => {
       sheet = jss.createStyleSheet({
         a: {display: 'flex'}
-      }, {named: false})
+      })
     })
 
     it('should generate correct CSS', () => {
       const supportedValue = cssVendor.supportedValue('display', 'flex')
-      expect(sheet.toString()).to.be(`a {\n  display: ${supportedValue};\n}`)
+      expect(sheet.toString()).to.be(`.a-id {\n  display: ${supportedValue};\n}`)
     })
   })
 })
