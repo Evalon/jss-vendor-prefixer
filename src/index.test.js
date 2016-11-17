@@ -9,6 +9,8 @@ const settings = {
   generateClassName: (str, rule) => `${rule.name}-id`
 }
 
+const isIE9 =  browser.name === 'ie' && browser.version === '9.0.0'
+
 describe('jss-vendor-prefixer', () => {
   let jss
 
@@ -17,6 +19,10 @@ describe('jss-vendor-prefixer', () => {
   })
 
   describe('prefixed property', () => {
+    if (isIE9) {
+      return
+    }
+
     let sheet
 
     beforeEach(() => {
@@ -24,10 +30,6 @@ describe('jss-vendor-prefixer', () => {
         a: {animation: 'yyy'}
       })
     })
-
-    if (browser.name === 'ie' && browser.version === '9.0.0') {
-      return
-    }
 
     it('should generate correct CSS', () => {
       const prefixedProp = cssVendor.supportedProperty('animation')
@@ -93,6 +95,10 @@ describe('jss-vendor-prefixer', () => {
   })
 
   describe('prefixed value', () => {
+    if (isIE9) {
+      return
+    }
+
     let sheet
 
     beforeEach(() => {
