@@ -9,7 +9,7 @@ const settings = {
   generateClassName: (str, rule) => `${rule.name}-id`
 }
 
-const isIE9 =  browser.name === 'ie' && browser.version === '9.0.0'
+const isIE9 = browser.name === 'ie' && browser.version === '9.0.0'
 
 describe('jss-vendor-prefixer', () => {
   let jss
