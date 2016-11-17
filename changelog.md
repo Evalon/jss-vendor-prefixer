@@ -1,3 +1,7 @@
+## 3.0.2 / 2016-11-17
+
+- skip animation test in ie9
+
 ## 3.0.1 / 2016-11-05
 
 - migrate tests

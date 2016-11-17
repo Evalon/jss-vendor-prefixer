@@ -1,6 +1,7 @@
 import expect from 'expect.js'
 import {create} from 'jss'
 import cssVendor from 'css-vendor'
+import browser from 'detect-browser'
 
 import vendorPrefixer from './index'
 
@@ -23,6 +24,10 @@ describe('jss-vendor-prefixer', () => {
         a: {animation: 'yyy'}
       })
     })
+
+    if (browser.name === 'ie' && browser.version === '9.0.0') {
+      return
+    }
 
     it('should generate correct CSS', () => {
       const prefixedProp = cssVendor.supportedProperty('animation')
