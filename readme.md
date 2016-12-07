@@ -1,6 +1,4 @@
-![JSS logo](https://avatars1.githubusercontent.com/u/9503099?v=3&s=60)
-
-## JSS plugin that handles vendor prefixes on the browser
+# JSS plugin that handles vendor prefixes on the browser
 
 This vendor prefixer knows which properties and values are supported in the
 current runtime and changes only whats required.
