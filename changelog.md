@@ -1,3 +1,7 @@
+## 4.0.0 / 2016-12-09
+
+- update to jss 6.0
+
 ## 3.0.2, 3.0.3 / 2016-11-17
 
 - skip animation test in ie9
