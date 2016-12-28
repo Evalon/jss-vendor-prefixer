@@ -1,6 +1,6 @@
 {
   "name": "jss-vendor-prefixer",
-  "description": "JSS plugin that handles vendor prefixes on the browser",
+  "description": "JSS plugin that handles vendor prefixes in the browser",
   "version": "4.0.0",
   "author": {
     "name": "Oleg Slobodskoi",
