@@ -7,16 +7,17 @@ import * as vendor from 'css-vendor'
  * @api public
  */
 export default function jssVendorPrefixer() {
-  return (rule) => {
+  function onProcessRule(rule) {
     if (rule.type === 'keyframe') {
       rule.selector = `@${vendor.prefix.css}${rule.selector.substr(1)}`
-      return
     }
+  }
 
-    if (rule.type !== 'regular') return
+  function onProcessStyle(style, rule) {
+    if (rule.type !== 'regular') return style
 
-    for (const prop in rule.style) {
-      const value = rule.style[prop]
+    for (const prop in style) {
+      const value = style[prop]
 
       let changeProp = false
       const supportedProp = vendor.supportedProperty(prop)
@@ -27,9 +28,13 @@ export default function jssVendorPrefixer() {
       if (supportedValue && supportedValue !== value) changeValue = true
 
       if (changeProp || changeValue) {
-        if (changeProp) delete rule.style[prop]
-        rule.style[supportedProp || prop] = supportedValue || value
+        if (changeProp) delete style[prop]
+        style[supportedProp || prop] = supportedValue || value
       }
     }
+
+    return style
   }
+
+  return {onProcessRule, onProcessStyle}
 }
