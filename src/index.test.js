@@ -112,4 +112,24 @@ describe('jss-vendor-prefixer', () => {
       expect(sheet.toString()).to.be(`.a-id {\n  display: ${supportedValue};\n}`)
     })
   })
+
+  describe('prefix function values', () => {
+    if (isIE9) {
+      return
+    }
+
+    let sheet
+
+    beforeEach(() => {
+      sheet = jss.createStyleSheet({
+        a: {display: () => 'flex'}
+      })
+      sheet.update()
+    })
+
+    it('should generate correct CSS', () => {
+      const supportedValue = cssVendor.supportedValue('display', 'flex')
+      expect(sheet.toString()).to.be(`.a-id {\n  display: ${supportedValue};\n}`)
+    })
+  })
 })

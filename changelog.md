@@ -1,3 +1,7 @@
+## 5.1.0 / 2017-04-14
+
+- prefix function values
+
 ## 5.0.0 / 2017-04-10
 
 - update to jss 7.0

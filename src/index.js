@@ -36,5 +36,9 @@ export default function jssVendorPrefixer() {
     return style
   }
 
-  return {onProcessRule, onProcessStyle}
+  function onChangeValue(value, prop) {
+    return vendor.supportedValue(prop, value)
+  }
+
+  return {onProcessRule, onProcessStyle, onChangeValue}
 }
