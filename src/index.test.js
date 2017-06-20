@@ -6,7 +6,7 @@ import browser from 'detect-browser'
 import vendorPrefixer from './index'
 
 const settings = {
-  generateClassName: rule => `${rule.name}-id`
+  createGenerateClassName: () => rule => `${rule.key}-id`
 }
 
 const isIE9 = browser.name === 'ie' && browser.version === '9.0.0'

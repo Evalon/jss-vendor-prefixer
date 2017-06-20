@@ -1,3 +1,7 @@
+## 6.0.0 / 2017-06-20
+
+- support jss 8
+
 ## 5.1.0 / 2017-04-14
 
 - prefix function values
