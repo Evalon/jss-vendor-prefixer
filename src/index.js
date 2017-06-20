@@ -8,13 +8,13 @@ import * as vendor from 'css-vendor'
  */
 export default function jssVendorPrefixer() {
   function onProcessRule(rule) {
-    if (rule.type === 'keyframe') {
-      rule.selector = `@${vendor.prefix.css}${rule.selector.substr(1)}`
+    if (rule.type === 'keyframes') {
+      rule.key = `@${vendor.prefix.css}${rule.key.substr(1)}`
     }
   }
 
   function onProcessStyle(style, rule) {
-    if (rule.type !== 'regular') return style
+    if (rule.type !== 'style') return style
 
     for (const prop in style) {
       const value = style[prop]
