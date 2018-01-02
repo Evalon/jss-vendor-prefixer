@@ -37,7 +37,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "css-vendor": "^0.3.8"
+    "css-vendor": "^1.0.0"
   },
   "main": "lib/index.js",
   "devDependencies": {

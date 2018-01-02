@@ -1,6 +1,7 @@
-## 7.0.0 / 2017-09-30
+## 7.0.0 / 2018-01-02
 
-- support jss 9
+- upgrade css-vendor to 1.0.0 (major refactoring)
+- set initial value for unsupported values in onChangeValue
 
 ## 6.0.0 / 2017-06-20
 
