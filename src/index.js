@@ -1,4 +1,5 @@
 import * as vendor from 'css-vendor'
+import {toCssValue} from 'jss'
 
 /**
  * Add vendor prefix to a property name when needed.
@@ -24,7 +25,7 @@ export default function jssVendorPrefixer() {
       if (supportedProp && supportedProp !== prop) changeProp = true
 
       let changeValue = false
-      const supportedValue = vendor.supportedValue(supportedProp, value)
+      const supportedValue = vendor.supportedValue(supportedProp, toCssValue(value))
       if (supportedValue && supportedValue !== value) changeValue = true
 
       if (changeProp || changeValue) {
@@ -37,7 +38,7 @@ export default function jssVendorPrefixer() {
   }
 
   function onChangeValue(value, prop) {
-    return vendor.supportedValue(prop, value)
+    return vendor.supportedValue(prop, toCssValue(value)) || value
   }
 
   return {onProcessRule, onProcessStyle, onChangeValue}

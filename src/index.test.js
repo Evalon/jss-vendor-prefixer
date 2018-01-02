@@ -94,6 +94,29 @@ describe('jss-vendor-prefixer', () => {
     })
   })
 
+  describe('array value', () => {
+    it('should generate correct border', () => {
+      const sheet = jss.createStyleSheet({
+        a: {border: ['red', 'green']}
+      })
+      expect(sheet.toString()).to.be('.a-id {\n  border: red, green;\n}')
+    })
+
+    it('should generate correct margin', () => {
+      const sheet = jss.createStyleSheet({
+        a: {margin: [['10px', '20px']]}
+      })
+      expect(sheet.toString()).to.be('.a-id {\n  margin: 10px 20px;\n}')
+    })
+
+    it('should generate correct important', () => {
+      const sheet = jss.createStyleSheet({
+        a: {margin: [['10px', '20px'], '!important']}
+      })
+      expect(sheet.toString()).to.be('.a-id {\n  margin: 10px 20px !important;\n}')
+    })
+  })
+
   describe('prefixed value', () => {
     if (isIE9) {
       return
